@@ -1,0 +1,9 @@
+What changed
+
+  On 1.20+ → works exactly as before.
+
+On 1.18–1.19:
+
+  If per-player VD methods don’t exist → it falls back to world view distance    (changes for everyone in that world).
+
+  If per-player NT VD doesn’t exist → it just ignores that setting (no crashes).

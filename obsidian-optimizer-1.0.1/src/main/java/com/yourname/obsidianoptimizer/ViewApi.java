@@ -1,14 +1,11 @@
 package com.yourname.obsidianoptimizer;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import org.bukkit.World;
 
 import java.lang.reflect.Method;
 
-/**
- * Paper exposes per-player view distance and no-tick view distance.
- * To stay compatible across versions, we probe via reflection and
- * fall back gracefully if a method isn't available.
- */
 final class ViewApi {
 
     private static Method setVD, getVD, setNT, getNT;
@@ -24,27 +21,39 @@ final class ViewApi {
         try {
             if (getVD != null) return (int) getVD.invoke(p);
         } catch (Throwable ignored) {}
-        // If not supported, approximate with client-reported or default server VD
-        return p.getClientViewDistance(); // usually available
+        // Fallback: return world’s current VD
+        return p.getWorld().getViewDistance();
     }
 
     static void setViewDistanceSafe(Player p, int value) {
         try {
-            if (setVD != null) setVD.invoke(p, value);
+            if (setVD != null) {
+                setVD.invoke(p, value);
+                return;
+            }
         } catch (Throwable ignored) {}
+
+        // Fallback: set global VD (affects whole world!)
+        World w = p.getWorld();
+        w.setViewDistance(value);
     }
 
     static int getNoTickViewDistanceSafe(Player p) {
         try {
             if (getNT != null) return (int) getNT.invoke(p);
         } catch (Throwable ignored) {}
-        // Fallback: treat as same as VD if NT unsupported
-        return getViewDistanceSafe(p);
+        // Fallback: just reuse world VD if NT not supported
+        return p.getWorld().getViewDistance();
     }
 
     static void setNoTickViewDistanceSafe(Player p, int value) {
         try {
-            if (setNT != null) setNT.invoke(p, value);
+            if (setNT != null) {
+                setNT.invoke(p, value);
+                return;
+            }
         } catch (Throwable ignored) {}
+
+        // No fallback: just ignore silently (older Paper doesn’t support no-tick VD)
     }
 }
