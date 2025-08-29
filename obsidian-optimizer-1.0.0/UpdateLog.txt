@@ -1,0 +1,2 @@
+Changes:
+  1. Obsidian Optimizer Release 2025-08-29
