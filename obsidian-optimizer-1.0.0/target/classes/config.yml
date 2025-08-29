@@ -1,0 +1,28 @@
+# How often (in ticks) to evaluate & retune players
+tick-interval: 80  # 4 seconds
+
+# Server performance thresholds
+target-mspt: 45.0       # raise VD if below this, lower if above
+panic-mspt: 55.0        # aggressively lower VD if above this
+
+# Player network thresholds
+high-ping: 180          # ms; if player's ping is above this, lower VD
+very-high-ping: 300     # ms; lower more aggressively
+
+# Per-player View Distance limits (chunks)
+min-view-distance: 4
+max-view-distance: 12
+
+# Per-player No-Tick View Distance (chunks) (Paper feature: sends terrain without ticking)
+min-no-tick-view-distance: 6
+max-no-tick-view-distance: 16
+
+# How many chunks to add/subtract per adjustment step
+tune-step: 1
+panic-step: 2
+
+# Cooldown (seconds) between a player's adjustments to avoid oscillation
+adjustment-cooldown-seconds: 15
+
+# After teleport or respawn, delay chunk resend to avoid burst
+post-teleport-resend-delay-ticks: 40
