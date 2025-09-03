@@ -1,8 +1,9 @@
-1.0.2 Is here!
+### 1.0.2 Is here!
 
-What's new?:
 
-1️⃣ Adaptive View Distance
+## What's new?:
+
+# 1️⃣ Adaptive View Distance
 What it is
 
 Minecraft’s view distance controls how many chunks a player can see around them.
@@ -33,7 +34,7 @@ Prevents server lag spikes when lots of players are online.
 
 Keeps the game looking nice when server load is low.
 
-2️⃣ Tuner System (Dynamic Per-Player Optimization)
+# 2️⃣ Tuner System (Dynamic Per-Player Optimization)
 
 The Tuner.java module adds more fine-grained control:
 
@@ -72,7 +73,7 @@ Prevents view distance from changing too often.
 
 Respecting teleport events to avoid visual glitches for players who just respawned or teleported.
 
-3️⃣ Particle Limiter (Optional)
+# 3️⃣ Particle Limiter (Very early beta so will be added soon.)
 What it is
 
 Minecraft particles (like smoke, explosion, potion effects) can cause significant lag when lots of them spawn at once.
@@ -87,7 +88,7 @@ Only enables particle control if available.
 
 Helps high-performance servers maintain smooth FPS and TPS.
 
-4️⃣ Multi-Version Support
+# 4️⃣ Multi-Version Support
 
 With the new Maven setup:
 
@@ -103,7 +104,7 @@ Ensures you can support old and new servers without modifying code.
 
 ⚠️ Note: This does not produce a single universal JAR yet; it builds multiple JARs per version.
 
-5️⃣ Key Configuration Options
+# 5️⃣ Key Configuration Options
 
 Inside config.yml, the plugin allows tuning:
 
@@ -118,7 +119,7 @@ Inside config.yml, the plugin allows tuning:
 | `panic-step`                                              | How much to drop view distance during high load          |
 | `post-teleport-resend-delay-ticks`                        | Prevents visual glitches right after teleport/respawn    |
 
-6️⃣ Why This Update is Powerful for Competitive Servers
+# 6️⃣ Why This Update is Powerful for Competitive Servers
 
 Reduces lag spikes from heavy entity loads or large numbers of players.
 
@@ -130,13 +131,13 @@ High ping players or lag spikes are handled gracefully.
 
 Keeps graphics quality high when the server can handle it.
 
-7️⃣ Optional Improvements Already Considered
+# 7️⃣ Optional Improvements Already Considered
 
 Could implement reflection-based API calls to make one JAR compatible across all versions (1.13 → 1.21).
 
 Particle limiter and view distance tuning could eventually support per-world or per-player preferences.
 
-✅ Summary:
+# ✅ Summary:
 
 Adaptive view distance → reduces lag dynamically.
 
