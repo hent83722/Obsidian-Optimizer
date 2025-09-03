@@ -1,0 +1,61 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.yourname.obsidianoptimizer</groupId>
+  <artifactId>obsidian-optimizer</artifactId>
+  <version>1.0.4</version>
+  <name>Obsidian Optimizer</name>
+
+  <properties>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <paper.version>1.20-R0.1-SNAPSHOT</paper.version>
+  </properties>
+
+  <repositories>
+    <repository>
+      <id>papermc-repo</id>
+      <url>https://repo.papermc.io/repository/maven-public/</url>
+    </repository>
+  </repositories>
+
+  <dependencies>
+    <dependency>
+      <groupId>io.papermc.paper</groupId>
+      <artifactId>paper-api</artifactId>
+      <version>${paper.version}</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.4.2</version>
+        <configuration>
+          <finalName>${project.artifactId}-${project.version}-${paper.version}</finalName>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <!-- Older versions: install locally via BuildTools first -->
+    <profile><id>1.13</id><properties><paper.version>1.13.2-R0.1-SNAPSHOT</paper.version></properties></profile>
+    <profile><id>1.14</id><properties><paper.version>1.14.4-R0.1-SNAPSHOT</paper.version></properties></profile>
+    <profile><id>1.15</id><properties><paper.version>1.15.2-R0.1-SNAPSHOT</paper.version></properties></profile>
+    <profile><id>1.16</id><properties><paper.version>1.16.5-R0.1-SNAPSHOT</paper.version></properties></profile>
+
+    <!-- Newer versions: available in Maven Central -->
+    <profile><id>1.17</id><properties><paper.version>1.17.1-R0.1-SNAPSHOT</paper.version></properties></profile>
+    <profile><id>1.18</id><properties><paper.version>1.18.2-R0.1-SNAPSHOT</paper.version></properties></profile>
+    <profile><id>1.19</id><properties><paper.version>1.19.4-R0.1-SNAPSHOT</paper.version></properties></profile>
+    <profile><id>1.20</id><properties><paper.version>1.20.1-R0.1-SNAPSHOT</paper.version></properties></profile>
+    <profile><id>1.21</id><properties><paper.version>1.21-R0.1-SNAPSHOT</paper.version></properties></profile>
+  </profiles>
+</project>

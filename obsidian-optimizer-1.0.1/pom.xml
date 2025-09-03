@@ -1,0 +1,105 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.yourname.obsidianoptimizer</groupId>
+  <artifactId>obsidian-optimizer</artifactId>
+  <version>1.0.1</version>
+  <name>Obsidian Optimizer</name>
+  <description>Adaptive performance optimizer for Paper servers</description>
+  <url>https://example.com</url>
+
+  <properties>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- Default Paper version; can be overridden by profiles -->
+    <paper.version>1.21-R0.1-SNAPSHOT</paper.version>
+  </properties>
+
+  <repositories>
+    <repository>
+      <id>papermc-repo</id>
+      <url>https://repo.papermc.io/repository/maven-public/</url>
+    </repository>
+  </repositories>
+
+  <dependencies>
+    <dependency>
+      <groupId>io.papermc.paper</groupId>
+      <artifactId>paper-api</artifactId>
+      <version>${paper.version}</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.4.2</version>
+        <configuration>
+          <finalName>${project.artifactId}-${project.version}-${paper.version}</finalName>
+          <archive>
+            <manifestEntries>
+              <Built-By>ObsidianOptimizer</Built-By>
+            </manifestEntries>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <profile>
+      <id>mc-1.21</id>
+      <properties>
+        <paper.version>1.21-R0.1-SNAPSHOT</paper.version>
+      </properties>
+    </profile>
+    <profile>
+      <id>mc-1.21.1</id>
+      <properties>
+        <paper.version>1.21.1-R0.1-SNAPSHOT</paper.version>
+      </properties>
+    </profile>
+    <profile>
+      <id>mc-1.21.3</id>
+      <properties>
+        <paper.version>1.21.3-R0.1-SNAPSHOT</paper.version>
+      </properties>
+    </profile>
+    <profile>
+      <id>mc-1.21.4</id>
+      <properties>
+        <paper.version>1.21.4-R0.1-SNAPSHOT</paper.version>
+      </properties>
+    </profile>
+    <profile>
+      <id>mc-1.21.5</id>
+      <properties>
+        <paper.version>1.21.5-R0.1-SNAPSHOT</paper.version>
+      </properties>
+    </profile>
+    <profile>
+      <id>mc-1.21.6</id>
+      <properties>
+        <paper.version>1.21.6-R0.1-SNAPSHOT</paper.version>
+      </properties>
+    </profile>
+    <profile>
+      <id>mc-1.21.7</id>
+      <properties>
+        <paper.version>1.21.7-R0.1-SNAPSHOT</paper.version>
+      </properties>
+    </profile>
+    <profile>
+      <id>mc-1.21.8</id>
+      <properties>
+        <paper.version>1.21.8-R0.1-SNAPSHOT</paper.version>
+      </properties>
+    </profile>
+  </profiles>
+</project>

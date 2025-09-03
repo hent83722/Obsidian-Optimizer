@@ -1,0 +1,14 @@
+name: ObsidianOptimizer
+main: com.yourname.obsidianoptimizer.ObsidianOptimizerPlugin
+version: 1.0.2
+api-version: '1.20'
+authors: [ 'Sandwich' ]
+description: Adaptive per-player view distance & network load optimizer for Paper.
+commands:
+  oo:
+    description: Obsidian Optimizer controls
+    usage: /oo <status|reload|pause|resume|set [min|max|nt-min|nt-max] <value>>
+permissions:
+  obsidianoptimizer.admin:
+    default: op
+    description: Allows managing Obsidian Optimizer

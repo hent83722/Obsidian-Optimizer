@@ -1,0 +1,7 @@
+com/yourname/obsidianoptimizer/MsptSampler.class
+com/yourname/obsidianoptimizer/Tuner.class
+com/yourname/obsidian/tasks/AdaptiveDistanceTask.class
+com/yourname/obsidian/util/Schedulers.class
+com/yourname/obsidianoptimizer/ObsidianOptimizerPlugin.class
+com/yourname/obsidianoptimizer/ObsidianOptimizerPlugin$AdaptiveDistanceTask.class
+com/yourname/obsidianoptimizer/ViewApi.class
